@@ -37,9 +37,13 @@
        direcory for ros instead of going to the workspace I am re-directed 
        to the location where ROS is stored (need to check this)
        
-    5. Apart from this I am doing a course of it from UDEMY by Aneas Kouba
+    5. Also read a bit about dependencies when creating packages.
+    
+    6. Apart from this I am doing a course of it from UDEMY by Aneas Kouba
        started with the communication protocols 3 types
             * publisher-subscriber
             * client-server
             * action-action something (just a mention for now)
+            
+           
             
