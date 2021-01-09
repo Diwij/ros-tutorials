@@ -1,14 +1,18 @@
 # ros-tutorials
 
 ## Commands used by now:
-         * roscore
-         * roscd
-         * rosls
-         * create_pkg
-         * rosrun
-         * rosnode list
-         * rostopic list
-         * rosnode info
+         * roscore - used to start master node
+         * roscd - takes you to the working workspace declared last in the .bashrc
+         * rosls - provides list of all programs in the particular location
+         * create_pkg - used to create packages 
+         * rosrun - running ros nodes
+         * rosnode - used to get certain information about particular nodes
+         * rosnode cleanup - used to cleanup residual nodes still in memory
+         * rosnode list - gives the list of all the active nodes
+         * rostopic list - gives the list of all topics being used by the active nodes
+         * rosnode info - provides info such as publishers and subscribers to a particular node
+         
+         
 
 ### Jan 5, 2021
 
