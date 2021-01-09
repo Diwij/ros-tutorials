@@ -40,7 +40,6 @@
     2. After setting up the workspace and all I tried up with the basic
        Talker and Listener nodes, Tried the turtle sim, create packages.
     
-            
     3. Also added the workspace to the .bashrc file but when i access the
        direcory for ros instead of going to the workspace I am re-directed 
        to the location where ROS is stored (need to check this)
@@ -53,5 +52,5 @@
             * client-server
             * action-action something (just a mention for now)
             
-           
+    6. Using TurtleSim and the teleop node       
             
