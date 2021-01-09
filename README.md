@@ -1,5 +1,15 @@
 # ros-tutorials
 
+## Commands used by now:
+         * roscore
+         * roscd
+         * rosls
+         * create_pkg
+         * rosrun
+         * rosnode list
+         * rostopic list
+         * rosnode info
+
 ### Jan 5, 2021
 
     1. Tried Packages after watching Tutorials from RSL and Guide from Ros WIKI.
@@ -26,20 +36,14 @@
     2. After setting up the workspace and all I tried up with the basic
        Talker and Listener nodes, Tried the turtle sim, create packages.
     
-    3. Commands used by now:
-            * roscore
-            * roscd
-            * rosls
-            * create_pkg
-            * rosrun
             
-    4. Also added the workspace to the .bashrc file but when i access the
+    3. Also added the workspace to the .bashrc file but when i access the
        direcory for ros instead of going to the workspace I am re-directed 
        to the location where ROS is stored (need to check this)
        
-    5. Also read a bit about dependencies when creating packages.
+    4. Also read a bit about dependencies when creating packages.
     
-    6. Apart from this I am doing a course of it from UDEMY by Aneas Kouba
+    5. Apart from this I am doing a course of it from UDEMY by Aneas Kouba
        started with the communication protocols 3 types
             * publisher-subscriber
             * client-server
