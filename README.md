@@ -53,5 +53,10 @@
             * client-server
             * action-action something (just a mention for now)
             
-    6. Using TurtleSim and the teleop node       
+    6. Using TurtleSim and the teleop node     
+    
+### Jan 10,2021
+
+    1. Understanding structure of messages sent by the publisher to the
+       subscriber
             
