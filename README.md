@@ -11,6 +11,7 @@
          * rosnode list - gives the list of all the active nodes
          * rostopic list - gives the list of all topics being used by the active nodes
          * rosnode info - provides info such as publishers and subscribers to a particular node
+         * rostopic info - provides the subscribers and publishers to a given topic
          
          
 
