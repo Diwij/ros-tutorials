@@ -8,11 +8,17 @@
          * rosrun - running ros nodes
          * rosnode - used to get certain information about particular nodes
          * rosnode cleanup - used to cleanup residual nodes still in memory
+                             rosnode cleanup
          * rosnode list - gives the list of all the active nodes
+                          eg: rosnode list
          * rostopic list - gives the list of all topics being used by the active nodes
-         * rosnode info - provides info such as publishers and subscribers to a particular node
+                           eg: rostopic list 
+         * rosnode info - provides info such as publishers, subscribers and services to a particular node
+                          eg: rosnode info /turtlesim
          * rostopic info - provides the subscribers and publishers to a given topic
-         
+                           eg: rostopic info /turtle1/cmd_vel
+         * rosmsg show - used to show contents used by a specific message
+                         eg: rosmsg show geometry_msgs/Twist
          
 
 ### Jan 5, 2021
@@ -59,4 +65,10 @@
 
     1. Understanding structure of messages sent by the publisher to the
        subscriber
+       /* genereal example geometry_msgs/Twist(used in turtle sim)
+          where geometry_msgs is the package where the msg is located
+          and Twist is the type of msg used for communication, where
+          twist defines the linear and angular velocities along the 3 Axes.*/
+    
+    2.
             
