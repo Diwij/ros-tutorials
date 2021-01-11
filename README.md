@@ -70,5 +70,4 @@
           and Twist is the type of msg used for communication, where
           twist defines the linear and angular velocities along the 3 Axes.*/
     
-    2.
             
