@@ -1,24 +1,24 @@
 # ros-tutorials
 
 ## Commands used by now:
-         * roscore - used to start master node
-         * roscd - takes you to the working workspace declared last in the .bashrc
-         * rosls - provides list of all programs in the particular location
-         * create_pkg - used to create packages 
-         * rosrun - running ros nodes
-         * rosnode - used to get certain information about particular nodes
-         * rosnode cleanup - used to cleanup residual nodes still in memory
-                             rosnode cleanup
-         * rosnode list - gives the list of all the active nodes
-                          eg: rosnode list
-         * rostopic list - gives the list of all topics being used by the active nodes
-                           eg: rostopic list 
-         * rosnode info - provides info such as publishers, subscribers and services to a particular node
-                          eg: rosnode info /turtlesim
-         * rostopic info - provides the subscribers and publishers to a given topic
-                           eg: rostopic info /turtle1/cmd_vel
-         * rosmsg show - used to show contents used by a specific message
-                         eg: rosmsg show geometry_msgs/Twist
+         *  roscore - used to start master node  
+         *  roscd - takes you to the working workspace declared last in the .bashrc  
+         *  rosls - provides list of all programs in the particular location  
+         *  create_pkg - used to create packages   
+         *  rosrun - running ros nodes  
+         *  rosnode - used to get certain information about particular nodes  
+         *  rosnode cleanup - used to cleanup residual nodes still in memory  
+                              rosnode cleanup  
+         *  rosnode list - gives the list of all the active nodes  
+                           eg: rosnode list  
+         *  rostopic list - gives the list of all topics being used by the active nodes  
+                            eg: rostopic list   
+         *  rosnode info - provides info such as publishers, subscribers and services to a particular node  
+                           eg: rosnode info /turtlesim  
+         *  rostopic info - provides the subscribers and publishers to a given topic  
+                            eg: rostopic info /turtle1/cmd_vel  
+         *  rosmsg show - used to show contents used by a specific message  
+                          eg: rosmsg show geometry_msgs/Twist  
          
 
 ### Jan 5, 2021
