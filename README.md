@@ -36,8 +36,10 @@
                         float64 z
         * rosmsg show geometry_msgs/Twist would give the info of a specific msg in this case (Twist)
           or rosmsg show standard_msgs/String
-        * To publish a msg on a topic using cmd line : rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4,                  0]' '[0, 0, 3]'
-          or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y:                  0, z: 1}}' where '-r 10' is to repeat the operation 10 times.
+        * To publish a msg on a topic using cmd line : 
+                              rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4, 0]' '[0, 0, 3]'
+          or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
+          where '-r 10' is to repeat the operation 10 times.
         
 ### RQT Graph:
         * use command rosrun rqt_graph rqt_graph while keeping turtlesim_node and teleop_key open
