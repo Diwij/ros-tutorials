@@ -44,7 +44,7 @@
           or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
           where '-r 10' is to repeat the operation 10 times.
         
-### RQT Graph:
+#### RQT Graph:
         * use command rosrun rqt_graph rqt_graph while keeping turtlesim_node and teleop_key open
           // it gives a nice summary of the communication going on.
         * on running rosrun rqt_plot rqt_plot I get an error saying Aborted (core dumped)
@@ -67,7 +67,77 @@
         * Start listening for topic msgs.
         * Spin to listen forever (in C++).
         
+        
+## Writing Publisher node in Python:
+        * To create a publisher node we first need a publisher Object using the cmd:
+                rospy.publisher('topic name', Type of topic name, queue_size = x)
+                        /* where x is an integer and queue_size is a buffer to store msgs
+                           until the subscriber is ready to pull msgs from publisher.*/
+                           (Higher value of x requires high memory storage)
+        * Create and initialize a ROS Node:
+                rospy.init_node('Name of Node', anonymous=True)
+                        /* where anonymous=True signifies each Node with the given 
+                           name would be unique and the Master would automatically
+                           assign an ID tag to each node with the given name
+                 
+        
+        * Publishing ROS message:
+        
+        
+### Ex Code for python:
+            import rospy
+            from std_msgs.msg import String
+            
+            def talker():
+                pub = rospy.publisher('chatter', String, queue_size = 10) # object pub created
+                rospy.init_node('talker', anonymous=True)
+                 rate = rospy.Rate(10) #10hz
+                i = 0
+                while not rospy.is_shutdown():              # while ROS is still running
+                     hello_str = "hello world %s",%i     # creatig a msg
+                     rospy.logininfo(hello_str)
+                     pub.publish(hello_str)              # publishing the msg to pub using the publish method
+                     rate.sleep()                        # rate.sleep is 1/Rate (in this case 0.1 since freq is 10 hz)
+                     i=i+1
+                     
+            if __name__ == '__main__':
+                try:
+                        talker()
+                except rospy.ROSInterruptException:
+                        pass
+                                
+                        
 
-
-    
+## Writing Subscriber node in Python:
+        
+        * Create and initialize the Subscriber node:
+                rospy.init_node('node name', anonymous=True)
+                
+        * Create a Subscriber Object:
+                rospy.Subscriber("chatter", String, callback function)
+        
+        * Create a Subscriber callback function:
+                def chatter_callback(message): # It takes the message recieved as parameter
+                
+        * Start Listening:
+                rospy.spin()
+                
+        * Subscribing ROS message:
+        `       
+        
+### Ex Code for Subscriber in python:
+            import rospy
+            from std_msgs.msg import String
+                        
+            def chatter_callback(message):
+                rospy.logininfo(rospy.get_caller_id() + "I heard %s", message.data)
+                               
+            def listener():
+                rospy.init_node('listener', anonymous=True)
+                rospy.Subscriber("chatter", String, chatter_callback)
+                rospy.spin()
+                        
+            if __name__ == '__main__':
+                listener()
+                        
             
