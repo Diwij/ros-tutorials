@@ -18,8 +18,11 @@
          *  rostopic info - provides the subscribers and publishers to a given topic  
                             eg: rostopic info /turtle1/cmd_vel  
          *  rosmsg show - used to show contents used by a specific message  
-                          eg: rosmsg show geometry_msgs/Twist  
-         
+                          eg: rosmsg show geometry_msgs/Twist
+         *  rostopic echo - Displayes the published message on a specific topic
+                            eg: rostopic echo /turtle1/cmd_vel
+         *                     
+                            
 
 ### TurtleSim:
         * rosrun turtlesim turtlesim_node - to run the turtle sim node    
@@ -47,6 +50,23 @@
         * on running rosrun rqt_plot rqt_plot I get an error saying Aborted (core dumped)
           // Ideally it should return an x-y plotting of the turtle co-ordinates once the 
            "/turtle1/pose/x and /turtle1/pose/y" are provided as topics to the graph.
+           
+           
+### Tips to Write a Publisher in ROS Topics:
+        * Determine a Name for the Topic to Publish.
+        * Determine type of msgs the Topic will Publish.
+        * Determine the Frequency (how many msgs to publish per second).
+        * Create a publisher object with chosen parameters.
+        * Keep publishing the topic msgs at the selected Frequency.
+        
+        
+### Tips to Write a Subscriber in ROS Topics:
+        * Identify name of the topic to listen to (must match with the publisher).
+        * Identift type of msg to be recieved (must match with the publisher).
+        * Define a callback func. that is executed whenever a new msg is recieved.
+        * Start listening for topic msgs.
+        * Spin to listen forever (in C++).
+        
 
 ### Jan 5, 2021
 
@@ -96,5 +116,29 @@
           where geometry_msgs is the package where the msg is located
           and Twist is the type of msg used for communication, where
           twist defines the linear and angular velocities along the 3 Axes.*/
+          
+### Jan 19,2021
+    1.  Understanding Subscriber/Publisher communication:
+                *Firstly we declare a subscriber which declares the topics
+                 of its subscription the type of msg it will recieve to the 
+                 ros master node.
+                *Then we declare a publisher which will have the same topic
+                 as the subscrber to subscribe to and will send the msg of 
+                 similiar type.
+                *The ROS Master node will then let the subscriber know of the 
+                 presence of a publisher with compatible topics and msgs.
+                *The subscriber then sends a TCP request to the publisher to
+                 create a connection and the publisher sends a response to
+                 establish that connection.
+                *This process happens before transmission of any DATA.
+                *Once the communication is set up Transmission of msgs can 
+                 take place over Topics.
+                 
+    2.  Once a successful Communication has been set between 2 nodes even if 
+        the ROS Master node crashes the communication is not disrupted. Only 
+        if the nodes are closed then restarting communication won't be possible
+        without ROS Master.
+        
+    3.  Writing Publisher and Subscriber in Python
     
             
