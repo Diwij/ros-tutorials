@@ -20,8 +20,7 @@
          *  rosmsg show - used to show contents used by a specific message  
                           eg: rosmsg show geometry_msgs/Twist
          *  rostopic echo - Displayes the published message on a specific topic
-                            eg: rostopic echo /turtle1/cmd_vel
-         *                     
+                            eg: rostopic echo /turtle1/cmd_vel                   
                             
 
 ### TurtleSim:
