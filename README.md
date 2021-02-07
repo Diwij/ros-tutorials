@@ -14,7 +14,12 @@
    *  rostopic list - gives the list of all topics being used by the active nodes  
           eg: rostopic list   
    *  rosnode info - provides info such as publishers, subscribers and services to a particular node  
-          eg: rosnode info /turtlesim  
+          eg: rosnode info /turtlesim 
+          
+          
+         rostopic info:
+         
+         ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2020-48-19.png "TurtleSim info")
    *  rostopic info - provides the subscribers and publishers to a given topic  
           eg: rostopic info /turtle1/cmd_vel  
    *  rosmsg show - used to show contents used by a specific message  
@@ -46,6 +51,10 @@
       or rosmsg show standard_msgs/String
     * To publish a msg on a topic using cmd line : 
               rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4, 0]' '[0, 0, 3]'
+              
+        
+        
+        Turtle moving for 3 seconds by default: ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2021-12-58.png "Moving Turtle")
               or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
               where '-r 10' is to repeat the operation 10 times.
         
