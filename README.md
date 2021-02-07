@@ -47,17 +47,17 @@
                     float64 x  
                     float64 y  
                     float64 z  
-    * rosmsg show geometry_msgs/Twist would give the info of a specific msg in this case (Twist)  
+  * rosmsg show geometry_msgs/Twist would give the info of a specific msg in this case (Twist)  
       or rosmsg show standard_msgs/String  
-    * To publish a msg on a topic using cmd line : 
-              rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4, 0]' '[0, 0, 3]'  
+  * To publish a msg on a topic using cmd line : 
+      rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4, 0]' '[0, 0, 3]'  
                 
                 
 Turtle moving for 3 seconds by default:  
 
 ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2021-12-58.png "Moving Turtle")  
 
-   or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
+or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
         where '-r 10' is to repeat the operation 10 times.
         
 #### RQT Graph:
