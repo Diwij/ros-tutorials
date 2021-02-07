@@ -38,32 +38,34 @@
    * rosrun turtlesim turtlesim_node - to run the turtle sim node    
    * rosrun turtlesim turtle_teleop_key - to take commands from keyboard arrow keys
    * turtle_node is the subscriber and turtle_teleop_key is the publisher
-   * if we do rosnode info /turtlesim:
-             * we can see the topic of communication between them is cmd_vel
-             * the msg sent in the topic is of type Twist under the package geometry_msgs
-             * if you locate to the msg in the ros folder u can see the input of the msg
-               where it has 2 vector3 inputs (linear and angular)
-               where vector3 is itself a msg comprising of:
-                     float64 x
-                     float64 y
-                     float64 z
-    * rosmsg show geometry_msgs/Twist would give the info of a specific msg in this case (Twist)
-      or rosmsg show standard_msgs/String
+   * if we do rosnode info /turtlesim:  
+                * we can see the topic of communication between them is cmd_vel  
+                * the msg sent in the topic is of type Twist under the package geometry_msgs  
+                * if you locate to the msg in the ros folder u can see the input of the msg  
+                * where it has 2 vector3 inputs (linear and angular)  
+                * where vector3 is itself a msg comprising of:  
+                    float64 x  
+                    float64 y  
+                    float64 z  
+    * rosmsg show geometry_msgs/Twist would give the info of a specific msg in this case (Twist)  
+      or rosmsg show standard_msgs/String  
     * To publish a msg on a topic using cmd line : 
-              rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4, 0]' '[0, 0, 3]'
-              
-        
-        
-        Turtle moving for 3 seconds by default: ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2021-12-58.png "Moving Turtle")
-              or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
-              where '-r 10' is to repeat the operation 10 times.
+              rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2, 4, 0]' '[0, 0, 3]'  
+                
+                
+Turtle moving for 3 seconds by default:  
+
+![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2021-12-58.png "Moving Turtle")  
+
+   or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 2, z: 0}, angular: {x: 0, y: 0, z: 1}}' 
+        where '-r 10' is to repeat the operation 10 times.
         
 #### RQT Graph:
-   * use command rosrun rqt_graph rqt_graph while keeping turtlesim_node and teleop_key open
-       // it gives a nice summary of the communication going on.
-   * on running rosrun rqt_plot rqt_plot I get an error saying Aborted (core dumped)
+   * use command rosrun rqt_graph rqt_graph while keeping turtlesim_node and teleop_key open  
+       // it gives a nice summary of the communication going on.  
+   * on running rosrun rqt_plot rqt_plot I get an error saying Aborted (core dumped)  
        // Ideally it should return an x-y plotting of the turtle co-ordinates once the 
-       "/turtle1/pose/x and /turtle1/pose/y" are provided as topics to the graph.
+       "/turtle1/pose/x and /turtle1/pose/y" are provided as topics to the graph.  
           
            
 ### Tips to Write a Publisher in ROS Topics:
