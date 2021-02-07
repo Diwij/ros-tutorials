@@ -100,26 +100,34 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
         
         
 ### Ex Code for python:
-            import rospy
-            from std_msgs.msg import String
-            
-            def talker():
-                pub = rospy.publisher('chatter', String, queue_size = 10) # object pub created
-                rospy.init_node('talker', anonymous=True)
-                 rate = rospy.Rate(10) #10hz
-                i = 0
-                while not rospy.is_shutdown():              # while ROS is still running
-                     hello_str = "hello world %s",%i     # creatig a msg
-                     rospy.logininfo(hello_str)
-                     pub.publish(hello_str)              # publishing the msg to pub using the publish method
-                     rate.sleep()                        # rate.sleep is 1/Rate (in this case 0.1 since freq is 10 hz)
-                     i=i+1
-                     
+          #!/usr/bin/python
+          import rospy
+          from std_msgs.msg import String
+
+          def talker():
+              #create a new publisher. we specify the topic name, then type of message then the queue size
+              new_pub = rospy.Publisher('chatter', String, queue_size=10)
+              #we need to initialize the node
+              # In ROS, nodes are uniquely named. If two nodes with the same
+              # node are launched, the previous one is kicked off. The
+              # anonymous=True flag means that rospy will choose a unique
+              # name for our 'talker' node 
+              rospy.init_node('talker', anonymous=True)
+              #set the loop rate
+              rate = rospy.Rate(1) # 1hz
+              #keep publishing until a Ctrl-C is pressed
+    
+              while not rospy.is_shutdown():
+                hello_str = "hello Diwij have a Good DAY" 
+                rospy.loginfo(hello_str)
+                new_pub.publish(hello_str)
+                rate.sleep()
+
             if __name__ == '__main__':
-                try:
-                        talker()
-                except rospy.ROSInterruptException:
-                        pass
+              try:
+                talker()
+              except rospy.ROSInterruptException:
+                pass  
                                 
                         
 
@@ -141,18 +149,30 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
         `       
         
 ### Ex Code for Subscriber in python:
-            import rospy
-            from std_msgs.msg import String
-                        
-            def chatter_callback(message):
-                rospy.logininfo(rospy.get_caller_id() + "I heard %s", message.data)
-                               
-            def listener():
-                rospy.init_node('listener', anonymous=True)
-                rospy.Subscriber("chatter", String, chatter_callback)
-                rospy.spin()
-                        
-            if __name__ == '__main__':
-                listener()
+          #!/usr/bin/python
+          import rospy
+          from std_msgs.msg import String
+
+          def chatter_callback(message):
+              #get_caller_id(): Get fully resolved name of local node
+              rospy.loginfo(rospy.get_caller_id() + " I heard %s", message.data)
+    
+          def listener():
+
+            # In ROS, nodes are uniquely named. If two nodes with the same
+            # node are launched, the previous one is kicked off. The
+            # anonymous=True flag means that rospy will choose a unique
+            # name for our 'listener' node so that multiple listeners can
+            # run simultaneously.
+            rospy.init_node('listener', anonymous=True)
+
+            rospy.Subscriber("chatter", String, chatter_callback)
+
+            # spin() simply keeps python from exiting until this node is stopped
+            rospy.spin()
+
+          if __name__ == '__main__':
+              listener()
+
                         
             
