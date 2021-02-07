@@ -123,10 +123,10 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
                 new_pub.publish(hello_str)
                 rate.sleep()
 
-            if __name__ == '__main__':
-              try:
+          if __name__ == '__main__':
+             try:
                 talker()
-              except rospy.ROSInterruptException:
+             except rospy.ROSInterruptException:
                 pass  
                                 
                         
