@@ -19,6 +19,8 @@
                             eg: rostopic info /turtle1/cmd_vel  
          *  rosmsg show - used to show contents used by a specific message  
                           eg: rosmsg show geometry_msgs/Twist
+                          
+                 rosmsg show: (https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2020-45-01.png "rosmsg show")
          *  rostopic echo - Displayes the published message on a specific topic
                             eg: rostopic echo /turtle1/cmd_vel                   
                             
