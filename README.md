@@ -24,7 +24,7 @@
          
          rosmsg show:
          
-         ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2020-45-01.png "rosmsg show")
+         ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2020-45-01.png "Twist msg")
    *  rostopic echo - Displayes the published message on a specific topic
           eg: rostopic echo /turtle1/cmd_vel                   
                             
