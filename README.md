@@ -73,19 +73,19 @@
    * Spin to listen forever (in C++).     
         
 ## Writing Publisher node in Python:
-   * To create a publisher node we first need a publisher Object using the cmd:
-        rospy.publisher('topic name', Type of topic name, queue_size = x)
-        /* where x is an integer and queue_size is a buffer to store msgs
-           until the subscriber is ready to pull msgs from publisher.*/
+        * To create a publisher node we first need a publisher Object using the cmd:
+                 rospy.publisher('topic name', Type of topic name, queue_size = x)
+                 /* where x is an integer and queue_size is a buffer to store msgs
+                 until the subscriber is ready to pull msgs from publisher.*/
                     (Higher value of x requires high memory storage)
-   * Create and initialize a ROS Node:
-        rospy.init_node('Name of Node', anonymous=True)
-        /* where anonymous=True signifies each Node with the given 
-           name would be unique and the Master would automatically
-           assign an ID tag to each node with the given name*/
+        * Create and initialize a ROS Node:
+                 rospy.init_node('Name of Node', anonymous=True)
+                 /* where anonymous=True signifies each Node with the given 
+                 name would be unique and the Master would automatically
+                 assign an ID tag to each node with the given name*/
                  
         
-   * Publishing ROS message:
+        * Publishing ROS message:
         
         
 ### Ex Code for python:
