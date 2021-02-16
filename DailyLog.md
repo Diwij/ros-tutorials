@@ -70,3 +70,19 @@
         without ROS Master.
         
     3.  Writing Publisher and Subscriber in Python
+    
+
+### Feb 15,2021
+    1.  The codes written for publisher/subscriber for a custom talker-listener
+        worked fine. A little blunder in the turtleSim velocity sender was done.
+        
+    2.  Wrote a custom message (CustomMsg.msg) with 4 fields (name, age, gender 
+        and marks).
+        
+    3.  Updated CMake list and package.xml file accordingly
+    
+    4.  Wrote a custom Publisher and Subscriber for that message where the 
+        publisher would send random marks b/w 75 and 99 to the subscriber
+        with the rest of the data constant.
+        
+    5.  The data was sent every 5 secs i.e. the rate was set at 0.2 Hz.
