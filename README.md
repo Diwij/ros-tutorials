@@ -174,5 +174,23 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
           if __name__ == '__main__':
               listener()
 
-                        
+### Writing a Custom Message:    
+  * go to your Catkin workspace and navigate to your workspace beginner_tutorials or  
+    in my case ros_essentials_cpp
+  * in the src folder create a folder with the name msg  
+  * Open VSCode and navigate to the folder and create a file with the extension .msg
+  * To see the structure of how a msg looks start roscore and type for eg: rosmsg show Twist
+    this will display the components of the Twist msg similiarly you can create your own.  
+    
+  * The Custom message looks like this:
+  
+    ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2015-39-07.png)
+  
+  * For this custom message i had a Publisher:
+  
+    ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2015-39-31.png)  
+  
+  * Similairly a Subscriber:
+  
+    ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2015-39-03.png)
             
