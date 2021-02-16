@@ -209,6 +209,8 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
    * Type rosservice list to see lit of running services.
    * Just like "rosnode info /" we can do rosservice info /name_of_service to get info about the service.  
    * eg: rosservice info /spawn (This is one of the services available when you run TurtleSim).
+   
+   
    ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2016-32-00.png)   
    
    
