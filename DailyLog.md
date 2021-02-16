@@ -85,4 +85,9 @@
         publisher would send random marks b/w 75 and 99 to the subscriber
         with the rest of the data constant.
         
-    5.  The data was sent every 5 secs i.e. the rate was set at 0.2 Hz.
+    5.  The data was sent every 5 secs i.e. the rate was set at 0.2 Hz.  
+    
+### Feb 16, 2021  
+    1.  Started Service-Parameter (Client-Server).
+    2.  service list on turtlesim
+    3.  spawning turtle on turtlesim using request.
