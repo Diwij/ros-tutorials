@@ -194,3 +194,44 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
   
     ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2015-39-03.png)
             
+            
+## Service and Parameters (Client-Server):
+   * Unlike Publisher&Subscriber communication which is continuous Service is a One time communication
+      which consists of a Client and a Server.
+   * The Client would send a request to the server for a particular Action and the server would Respond.
+   * The Communication is completely synchronous!
+   * It is Bi-directional communication unlike Topics which is One-way.
+    
+    
+### Ros-Services and TurtleSim:
+   * Start roscore
+   * Run TurtleSim
+   * Type rosservice list to see lit of running services.
+   * Just like "rosnode info /" we can do rosservice info /name_of_service to get info about the service.  
+   * eg: rosservice info /spawn (This is one of the services available when you run TurtleSim).
+   ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2016-32-00.png)   
+   
+   
+   * What Info we get:  
+        * The Service is provided by the Node turtlesim.    
+        * It is available on the following URI (Uniform resource identifier).  
+        * The message exchanged is of type spawn.(But if we do rosmsg show turtlesim/spawn we get nothing).    
+        * In case of service we have a request and a response so we have a service message and a  
+          response message .  
+        * Args are the arguments contained in the request message.  
+        
+        
+  * In place of rosmsg show to get info of the service and request message we can do:  
+          rossrv info turtlesim/Spawn  
+          ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2016-55-47.png)   
+              * The first 3 returned are the position of the new turtle to be spawned in the request message.  
+              * Name is the name specified by the user of the turtle as request.  
+              * The Name field in the last is the name of the turtle returned by the Server.  
+              
+  * To use a service available we need to call the service suing rosservice call /name_of_service args.  
+    eg: rosservice call /spawn 5 6 0 Turtle2 // Here 5&6 are the x & y coordinates in the turtleSim window,  
+    0 is the spawn angle about z-axis, Turtle2 is the name of the turtle to be spawned sent by the request.  
+    
+    The value returned after sending the request is name: "Turtle2".
+         
+    
