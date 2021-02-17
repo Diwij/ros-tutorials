@@ -103,40 +103,7 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
                  
         
         * Publishing ROS message:
-        
-        
-### Ex Code for python:
-          #!/usr/bin/python
-          import rospy
-          from std_msgs.msg import String
-
-          def talker():
-              #create a new publisher. we specify the topic name, then type of message then the queue size
-              new_pub = rospy.Publisher('chatter', String, queue_size=10)
-              #we need to initialize the node
-              # In ROS, nodes are uniquely named. If two nodes with the same
-              # node are launched, the previous one is kicked off. The
-              # anonymous=True flag means that rospy will choose a unique
-              # name for our 'talker' node 
-              rospy.init_node('talker', anonymous=True)
-              #set the loop rate
-              rate = rospy.Rate(1) # 1hz
-              #keep publishing until a Ctrl-C is pressed
-    
-              while not rospy.is_shutdown():
-                hello_str = "hello Diwij have a Good DAY" 
-                rospy.loginfo(hello_str)
-                new_pub.publish(hello_str)
-                rate.sleep()
-
-          if __name__ == '__main__':
-             try:
-                talker()
-             except rospy.ROSInterruptException:
-                pass  
-                                
-                        
-
+      
 ## Writing Subscriber node in Python:
         
         * Create and initialize the Subscriber node:
@@ -153,33 +120,13 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
                 
         * Subscribing ROS message:
         `       
-        
+### Ex Code for Publisher in python:
+   [Python Code for Publisher](https://github.com/Diwij/ros-tutorials/blob/main/Codes/Subscriber_Publisher/Tutorial/Hi.py)             
+                
 ### Ex Code for Subscriber in python:
-          #!/usr/bin/python
-          import rospy
-          from std_msgs.msg import String
-
-          def chatter_callback(message):
-              #get_caller_id(): Get fully resolved name of local node
-              rospy.loginfo(rospy.get_caller_id() + " I heard %s", message.data)
-    
-          def listener():
-
-            # In ROS, nodes are uniquely named. If two nodes with the same
-            # node are launched, the previous one is kicked off. The
-            # anonymous=True flag means that rospy will choose a unique
-            # name for our 'listener' node so that multiple listeners can
-            # run simultaneously.
-            rospy.init_node('listener', anonymous=True)
-
-            rospy.Subscriber("chatter", String, chatter_callback)
-
-            # spin() simply keeps python from exiting until this node is stopped
-            rospy.spin()
-
-          if __name__ == '__main__':
-              listener()
-
+   [Python Code for Subscriber](https://github.com/Diwij/ros-tutorials/blob/main/Codes/Subscriber_Publisher/Tutorial/I_Hear.py)  
+   
+   
 ### Writing a Custom Message:    
   * go to your Catkin workspace and navigate to your workspace beginner_tutorials or  
     in my case ros_essentials_cpp
