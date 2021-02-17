@@ -31,7 +31,12 @@
          
          ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-01-17%2020-45-01.png "Twist msg")
    *  rostopic echo - Displayes the published message on a specific topic
-          eg: rostopic echo /turtle1/cmd_vel                   
+          eg: rostopic echo /turtle1/cmd_vel   
+   
+   *  rosservice list - Used to list all the active services.  
+   *  rossrv show /(name of service)
+   *  rossrv info /(name of service)
+   *  rosservice call /(name of service) (args of service).
                             
 
 ### TurtleSim:
@@ -223,9 +228,13 @@ or : rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist '{linear: {x: 1, y:
         * Args are the arguments contained in the request message.  
         
         
-  * In place of rosmsg show to get info of the service and request message we can do:  
-          rossrv info turtlesim/Spawn  
-          ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2016-55-47.png)   
+  * In place of rosmsg show to get info of the service and request message we can do:      
+    
+       rossrv info turtlesim/Spawn    
+       or  
+       rossrv show turtlesim/Spawn
+          
+      ![](https://github.com/Diwij/ros-tutorials/blob/main/Images/Screenshot%20from%202021-02-16%2016-55-47.png)   
               * The first 3 fields returned are the position of the new turtle to be spawned in the request message.  
               * Name is the name specified by the user of the turtle as request.  
               * The Name field in the last is the name of the turtle returned by the Server.  
