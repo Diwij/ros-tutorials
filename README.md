@@ -34,6 +34,7 @@
           eg: rostopic echo /turtle1/cmd_vel   
    
    *  rosservice list - Used to list all the active services.  
+   *  rosservice info /(name of service)
    *  rossrv show /(name of service)
    *  rossrv info /(name of service)
    *  rosservice call /(name of service) (args of service).
